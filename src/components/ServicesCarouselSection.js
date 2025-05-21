@@ -14,34 +14,34 @@ const allCards = [
     img: psicologaImg,
     title: 'Psicologa',
     
-    name: 'Dra. Ana Paula',
+    name: '',
     description: 'Especialista em avaliação neuropsicológica infantil e adulta.',
-    contato: 'ana.paula@exemplo.com',
+    contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
   {
     img: psicopedagogiaImg,
     title: 'Psicopedagogia',
-    name: 'Dra. Beatriz Souza',
+    name: '',
     description: 'Psicóloga clínica com foco em desenvolvimento humano.',
-    contato: 'beatriz.souza@exemplo.com',
+    contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
   {
     img: nutricaoImg,
     title: 'Nutrição',
-    name: 'Dr. Carlos Silva',
+    name: '',
     description: 'Fonoaudiólogo com experiência em linguagem e comunicação.',
-    contato: 'carlos.silva@exemplo.com',
+    contato: '',
     url: '/servicos/nutricao'
   },
 
   {
     img: fonodiologa1,
     title: 'Fonoaudiologia',
-    name: 'Dr. Carlos Silva',
+    name: '',
     description: 'Fonoaudiólogo com experiência em linguagem e comunicação.',
-    contato: 'carlos.silva@exemplo.com',
+    contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
 

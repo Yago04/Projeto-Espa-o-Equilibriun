@@ -67,7 +67,7 @@ const HeroSection = () => {
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
             zIndex: 2,
             marginBottom: mobile ? 40 : 0,
@@ -79,20 +79,19 @@ const HeroSection = () => {
               fontSize: mobile ? '6vw' : 48,
               fontWeight: 700,
               margin: '0 0 24px 0',
-              textAlign: 'center',
               lineHeight: mobile ? 1.3 : 1.1,
               letterSpacing: mobile ? '-0.5px' : 'normal',
               padding: mobile ? '0 2vw' : '0',
               wordBreak: 'break-word',
             }}
           >
-            Você já ouviu falar em <br /> Neurodiversidade?
+            Você já ouviu falar em<br/>Neurodiversidade?
           </h1>
           <p
             style={{
               fontSize: mobile ? '4vw' : 22,
               maxWidth: 500,
-              margin: '0 auto 32px auto',
+              marginBottom: '32px',
               textAlign: 'justify',
               fontWeight: 500,
               lineHeight: mobile ? 1.5 : 1.4,

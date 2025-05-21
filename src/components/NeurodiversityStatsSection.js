@@ -6,8 +6,8 @@ const stats = [
     value: '+ 20%',
     description: (
       <>
-        POPULAÇÃO MUNDIAL <br />
-        É NEURODIVERSA
+        População mundial <br/>
+        é neurodiversa
       </>
     ),
   },
@@ -15,9 +15,9 @@ const stats = [
     value: '1 entre 5',
     description: (
       <>
-        TEM ALGUM TIPO DE <br />
-        DIFERENÇA DE <br />
-        APRENDIZAGEM
+       Tem algum tipo <br />
+        deferença de <br />
+        aprendizagem
       </>
     ),
   },
@@ -25,9 +25,9 @@ const stats = [
     value: '90%',
     description: (
       <>
-        DOS GESTORES QUE <br />
-        ADOTARAM A <br />
-        NEURODIVERSIDADE
+        Dos gestores que<br />
+        adotaram a <br />
+        neurodiversidade
       </>
     ),
   },
@@ -138,7 +138,7 @@ const NeurodiversityStatsSection = () => {
               <div
                 style={{
                   fontSize: mobile ? 32 : 40,
-                  fontWeight: 400,
+                  fontWeight: 700,
                   marginBottom: 10,
                   marginTop: 10,
                   letterSpacing: 1,
