@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import HeroSection from './components/HeroSection';
+import NeurodiversityInfoSection from './components/NeurodiversityInfoSection';
+import NeurodiversitySection from './components/NeurodiversityStatsSection';
+import ServicesCarouselSection from './components/ServicesCarouselSection';
+import PartnersCarouselSection from './components/PartnersCarouselSection';
+import CarrouselPhotos from './components/CarouselPhotos';
+import LocationSection from './components/LocationSection';
+import GoogleReviewsSection from './components/GoogleReviewsSection';
+import WhatsAppFloatButton from './components/WhatsAppFloatButton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeroSection />
+      <NeurodiversityInfoSection />
+      <NeurodiversitySection />
+      <ServicesCarouselSection />
+      <CarrouselPhotos />
+      <GoogleReviewsSection />
+      <PartnersCarouselSection />
+      <LocationSection />
+      <WhatsAppFloatButton />
+      {/* Outras seções aqui */}
     </div>
   );
 }
