@@ -6,6 +6,7 @@ import { useScrollReveal } from './useScrollReveal';
 
 const infoBlocks = [
   {
+    id: 'simboloid',
     img: SimboloImg,
     text: 'Neurodiversidade é um termo que reconhece as variações neurológicas, como: autismo, TDAH e dislexia, parte natural da condição humana.',
     imgPosition: 'left',
@@ -16,6 +17,7 @@ const infoBlocks = [
     imgPosition: 'right',
   },
   {
+    id: 'cerebroid',
     img: cerebroImg,
     text: 'A neurodiversidade enfatiza que cada pessoa tem um conjunto único de habilidades e desafios, e que as diferenças devem ser celebradas e compreendidas.',
     imgPosition: 'left',
@@ -85,12 +87,23 @@ const NeurodiversityInfoSection = () => {
                 src={block.img}
                 alt=""
                 style={{
-                  width: mobile ? 160 : 200,
-                  height: mobile ? 140 : 170,
+                  width: block.id === 'cerebroid' 
+                  ? (mobile ? 200 : 150) 
+                  : block.id === 'simboloid'  
+                  ? (mobile ? 200 : 200) 
+                  : (mobile ? 160 : 210),
+
+                  height: block.id === 'cerebroid'
+                  ? (mobile ? 180 : 130) 
+                  : block.id === 'simboloid'
+                  ? (mobile ? 180 : 180)
+                  : (mobile ? 140 : 125),
+
                   marginBottom: mobile ? 18 : 0,
                   transition: 'width 0.3s, height 0.3s',
                 }}
               />
+              
               <div style={{
                 flex: 1,
                 color: '#6b3fa0',
