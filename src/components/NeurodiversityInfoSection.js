@@ -85,8 +85,8 @@ const NeurodiversityInfoSection = () => {
                 src={block.img}
                 alt=""
                 style={{
-                  width: mobile ? 140 : 180,
-                  height: mobile ? 140 : 180,
+                  width: mobile ? 160 : 200,
+                  height: mobile ? 140 : 170,
                   marginBottom: mobile ? 18 : 0,
                   transition: 'width 0.3s, height 0.3s',
                 }}

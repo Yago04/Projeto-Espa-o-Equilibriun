@@ -2,7 +2,7 @@
   "name": "lp-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://{Yago04}.github.io/{Projeto-Espa-o-Equilibriun}",
+  "homepage": "https://Yago04.github.io/Projeto-Espa-o-Equilibriun",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
