@@ -31,6 +31,7 @@ const StructureCarouselSection = () => {
 
   return (
     <section
+    id='estrutura'
       ref={ref}
       style={{
         background: '#fff',

@@ -51,7 +51,7 @@ const LocationSection = () => {
   ];
 
   return (
-    <section style={{ padding: '60px 0', background: '#fff' }}>
+    <section style={{ padding: '60px 0', background: '#fff' }} id='onde-estamos'>
       <h2 style={{ 
         color: '#8e5fa2', 
         fontSize: 44, 

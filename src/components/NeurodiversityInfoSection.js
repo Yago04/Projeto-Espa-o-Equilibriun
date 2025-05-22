@@ -12,6 +12,7 @@ const infoBlocks = [
     imgPosition: 'left',
   },
   {
+    id: 'coracaoid',
     img: coracaoImg,
     text: 'Em vez de considerar essas diferenças como problemas a serem corrigidos, a neurodiversidade propõe que sejam aceitas e valorizadas.',
     imgPosition: 'right',
@@ -36,6 +37,7 @@ const NeurodiversityInfoSection = () => {
 
   return (
     <section
+    id='neurodiversidade'
       ref={ref}
       style={{
         background: '#fff',
@@ -88,16 +90,20 @@ const NeurodiversityInfoSection = () => {
                 alt=""
                 style={{
                   width: block.id === 'cerebroid' 
-                  ? (mobile ? 200 : 150) 
+                  ? (mobile ? 180 : 150) 
                   : block.id === 'simboloid'  
-                  ? (mobile ? 200 : 200) 
+                  ? (mobile ? 210 : 200) 
+                  : block.id === 'coracaoid'
+                  ? (mobile ? 185 : 210)
                   : (mobile ? 160 : 210),
 
                   height: block.id === 'cerebroid'
-                  ? (mobile ? 180 : 130) 
+                  ? (mobile ? 150 : 130) 
                   : block.id === 'simboloid'
-                  ? (mobile ? 180 : 180)
-                  : (mobile ? 140 : 125),
+                  ? (mobile ? 150 : 170)
+                  : block.id === 'coracaoid'
+                  ? (mobile ? 150 : 125)
+                  : (mobile ? 150 : 125),
 
                   marginBottom: mobile ? 18 : 0,
                   transition: 'width 0.3s, height 0.3s',
