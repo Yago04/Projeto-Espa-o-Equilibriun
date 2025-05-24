@@ -1,29 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
+import fotoperfil from '../assets/images/foto_perfil/perfil.png';
+import fotoperfil2 from '../assets/images/foto_perfil/perfil2.png';
+import fotoperfil3 from '../assets/images/foto_perfil/perfil3.png';
+import fotoperfil4 from '../assets/images/foto_perfil/perfil4.png';
 
 const reviews = [
   {
     name: 'Maria Souza',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    avatar: fotoperfil,
     rating: 5,
     comment: 'Atendimento excelente! Profissionais muito atenciosos e ambiente acolhedor. Recomendo demais.'
   },
   {
     name: 'Ana Paula',
-    avatar: 'https://randomuser.me/api/portraits/women/65.jpg',
+    avatar: fotoperfil2,
     rating: 5,
     comment: 'Mudou a vida da nossa família! Só gratidão pelo cuidado e profissionalismo.'
   },
   {
     name: 'Carlos Mendes',
-    avatar: 'https://randomuser.me/api/portraits/men/41.jpg',
+    avatar: fotoperfil3,
     rating: 5,
     comment: 'Ótima estrutura e profissionais qualificados. Recomendo para todos que buscam um atendimento humanizado.'
   },
   {
-    name: 'João Silva',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    name: 'Victória Gonçalves',
+    avatar: fotoperfil4,
     rating: 4,
-    comment: 'Minha filha foi muito bem recebida e acompanhada. Equipe preparada e dedicada.'
+    comment: 'Espaço grande e aconchegante, pessoal muito atencioso e ótimos profissionais'
   }
 ];
 

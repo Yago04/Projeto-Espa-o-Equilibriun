@@ -10,7 +10,7 @@ const grupos = {
   taguatinga: [
     require('../assets/escritorio.webp'),
     require('../assets/escritorio2.webp'),
-    require('../assets/escritorio3.webp'),
+    require('../assets/images//escritorio3.webp'),
   ],
 };
 

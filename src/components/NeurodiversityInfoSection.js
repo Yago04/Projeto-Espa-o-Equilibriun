@@ -1,7 +1,7 @@
 import React from 'react';
-import SimboloImg from '../assets/Simbolo.png';
-import coracaoImg from '../assets/coracao.png';
-import cerebroImg from '../assets/cerebro.jpg'; // ou o nome correto do arquivo do cérebro
+import SimboloImg from '../assets/images/imagesIcons/Simbolo.png';
+import coracaoImg from '../assets/images/imagesIcons/coracao.png';
+import cerebroImg from '../assets/images/imagesIcons/cerebro.jpg'; 
 import { useScrollReveal } from './useScrollReveal';
 
 const infoBlocks = [
@@ -14,7 +14,7 @@ const infoBlocks = [
   {
     id: 'coracaoid',
     img: coracaoImg,
-    text: 'Em vez de considerar essas diferenças como problemas a serem corrigidos, a neurodiversidade propõe que sejam aceitas e valorizadas.',
+    text: 'Em vez de considerar essas diferenças como problemas a serem corrigidos, a neurodiversidade propõe que elas sejam aceitas e valorizadas. Dessa forma, essas diferenças devem ser reconhecidas como características naturais, e não como questões a serem consertadas.',
     imgPosition: 'right',
   },
   {
@@ -83,6 +83,7 @@ const NeurodiversityInfoSection = () => {
                 justifyContent: 'center',
                 marginBottom: mobile ? 36 : 48,
                 gap: 24,
+                
               }}
             >
               <img
@@ -115,7 +116,7 @@ const NeurodiversityInfoSection = () => {
                 color: '#6b3fa0',
                 fontSize: mobile ? 16 : 18,
                 fontWeight: 700,
-                textAlign: idx === 1 ? 'right' : (mobile ? 'center' : 'left'),
+                textAlign: mobile ? 'center' : (idx === 1 ? 'right' : 'left'),
                 minWidth: mobile ? 'unset' : 200,
                 padding: mobile ? '0 4vw' : 0,
                 wordBreak: 'break-word',

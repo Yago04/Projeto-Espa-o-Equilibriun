@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from './components/Navabar';
 import HeroSection from './components/HeroSection';
 import NeurodiversityInfoSection from './components/NeurodiversityInfoSection';
 import NeurodiversitySection from './components/NeurodiversityStatsSection';

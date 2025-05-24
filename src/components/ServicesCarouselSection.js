@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import psicologaImg from '../assets/psicologa.jpg';
-import psicopedagogiaImg from '../assets/psicopedagogia.jpg';
-import fonodiologa1 from '../assets/fonodiologa1.jpg';
-import nutricaoImg from '../assets/nutricao.jpg';
+import psicologaImg from '../assets/images/imagesProf/psicologa.jpg';
+import psicopedagogiaImg from '../assets/images/imagesProf/psicopedagogia.jpg';
+import fonodiologa1 from '../assets/images/imagesProf/fonodiologia.jpg';
+import nutricaoImg from '../assets/images/imagesProf/nutricao.jpg';
+import avaliacaoImg from '../assets/images/imagesProf/avaliacao.jpg';
+import mbaImg from '../assets/images/imagesProf/mba.jpg';
 import { useScrollReveal } from './useScrollReveal';
 
 
@@ -12,8 +14,7 @@ import { useScrollReveal } from './useScrollReveal';
 const allCards = [
   {
     img: psicologaImg,
-    title: 'Psicologa',
-    
+    title: 'Psicologia',
     name: '',
     description: 'Especialista em avaliação neuropsicológica infantil e adulta.',
     contato: '',
@@ -44,8 +45,40 @@ const allCards = [
     contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
-
-
+  {
+    img: mbaImg,
+    title: 'Metodologia ABA',
+    name: '',
+    description: 'Abordagens baseadas em Análise do Comportamento Aplicada.',
+    contato: '',
+    url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+  },
+  
+  {
+    img: avaliacaoImg,
+    title: 'Avaliação Neuropsicológica',
+    name: '',
+    description: 'Avaliação completa das funções cognitivas.',
+    contato: '',
+    url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+  },
+  {
+    img: psicologaImg,
+    title: 'Terapia Ocupacional',
+    name: '',
+    description: 'Atendimento especializado em terapia ocupacional para todas as idades.',
+    contato: '',
+    url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+  },
+  {
+    img: psicopedagogiaImg,
+    title: 'Psicomotricidade',
+    name: '',
+    description: 'Desenvolvimento motor e cognitivo através de atividades lúdicas.',
+    contato: '',
+    url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+  },
+  
 ];
 
 const ServicesCarouselSection = () => {
@@ -75,6 +108,10 @@ const ServicesCarouselSection = () => {
     setFlipped((prev) => prev.map((f, i) => (i === idx ? !f : f)));
   };
 
+  // Indicadores de página
+  const totalPages = Math.ceil(allCards.length / visibleCards);
+  const currentPage = Math.floor(startIdx / visibleCards) + 1;
+
   return (
     <section
     id='servicos'
@@ -92,7 +129,7 @@ const ServicesCarouselSection = () => {
         ref={titleRef}
         style={{
           color: '#6b3fa0',
-          fontSize: 44,
+          fontSize: isMobile ? 32 : 44,
           fontWeight: 900,
           marginBottom: 10,
           opacity: titleVisible ? 1 : 0,
@@ -102,134 +139,252 @@ const ServicesCarouselSection = () => {
       >
         Nossos Serviços
       </h2>
-      <p style={{ color: '#6b3fa0', fontSize: 20, fontWeight: 700, marginBottom: 40 }}>
+      <p style={{ 
+        color: '#6b3fa0', 
+        fontSize: isMobile ? 16 : 20, 
+        fontWeight: 700, 
+        marginBottom: 40,
+        padding: isMobile ? '0 20px' : '0'
+      }}>
         Atendimento especializado e humanizado para todas as idades
       </p>
+
+      {/* Botões de navegação */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 20,
+        marginBottom: 30
+      }}>
+        <button
+          onClick={prev}
+          style={{
+            background: '#6b3fa0',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '50%',
+            width: isMobile ? 40 : 50,
+            height: isMobile ? 40 : 50,
+            fontSize: isMobile ? 20 : 24,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.1)';
+            e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+          }}
+        >
+          ←
+        </button>
+
+        {/* Indicadores de página */}
+        <div style={{
+          display: 'flex',
+          gap: 8,
+          alignItems: 'center'
+        }}>
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <div
+              key={index}
+              style={{
+                width: isMobile ? 8 : 10,
+                height: isMobile ? 8 : 10,
+                borderRadius: '50%',
+                background: currentPage === index + 1 ? '#6b3fa0' : '#d1b3e0',
+                transition: 'all 0.3s ease'
+              }}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={next}
+          style={{
+            background: '#6b3fa0',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '50%',
+            width: isMobile ? 40 : 50,
+            height: isMobile ? 40 : 50,
+            fontSize: isMobile ? 20 : 24,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.1)';
+            e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+          }}
+        >
+          →
+        </button>
+      </div>
+
       <div style={{
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: isMobile ? 24 : 80,
+        gap: isMobile ? 24 : 60,
         marginBottom: 30,
         padding: isMobile ? '0 4vw' : '0',
+        transition: 'all 0.5s ease-in-out',
+        width: '100%',
       }}>
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? 24 : 120,
-          alignItems: 'center',
+          gap: isMobile ? 24 : 60,
+          transition: 'all 0.5s ease-in-out',
+          width: '100%',
+          maxWidth: isMobile ? '100%' : '1200px',
+          margin: '0 auto',
         }}>
-          {(isMobile ? allCards : allCards.slice(startIdx, startIdx + visibleCards)).map((card, idx) => (
+          {allCards.slice(startIdx, startIdx + visibleCards).map((card, idx) => (
             <div
               key={idx}
               style={{
-                perspective: 1200,
-                minWidth: isMobile ? '90vw' : 220,
-                maxWidth: isMobile ? '95vw' : 240,
-                height: isMobile ? 340 : 320,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                opacity: fadeIn ? 1 : 0,
-                transform: fadeIn ? 'translateY(0)' : 'translateY(40px)',
-                transition: 'opacity 0.7s, transform 0.7s',
+                perspective: '1000px',
+                width: isMobile ? '90%' : '280px',
+                height: isMobile ? '400px' : '350px',
+                cursor: 'pointer',
+                transition: 'all 0.5s ease-in-out',
                 margin: isMobile ? '0 auto' : 0,
               }}
+              onClick={() => handleFlip(idx)}
             >
               <div
                 style={{
+                  position: 'relative',
                   width: '100%',
                   height: '100%',
-                  position: 'relative',
-                  transition: 'transform 0.6s',
+                  transition: 'transform 0.8s ease-in-out',
                   transformStyle: 'preserve-3d',
-                  transform: flipped[idx] ? 'rotateY(180deg)' : 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  transform: flipped[idx] ? 'rotateY(180deg)' : 'rotateY(0)',
                 }}
-                onClick={() => handleFlip(idx)}
-                onMouseEnter={() => handleFlip(idx)}
-                onMouseLeave={() => handleFlip(idx)}
               >
                 {/* Frente do card */}
                 <div
                   style={{
-                    background: '#f3f7fb',
-                    borderRadius: 24,
-                    padding: isMobile ? 18 : 18,
-                    boxShadow: '0 2px 16px rgba(0,0,0,0.08)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
                     backfaceVisibility: 'hidden',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+                    transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <img 
-                    src={card.img} 
-                    alt={card.title} 
-                    style={{ 
-                      width: isMobile ? '80vw' : 200, 
-                      height: isMobile ? 180 : 200, 
-                      objectFit: 'cover', 
-                      borderRadius: 22, 
-                      marginBottom: isMobile ? 16 : 18 
-                    }} 
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'all 0.5s ease-in-out',
+                    }}
                   />
-                  <div style={{ color: '#1a3365', fontWeight: 900, fontSize: 22, marginBottom: 10 }}>{card.title}</div>
-                  <div style={{ color: '#6b3fa0', fontWeight: 500, fontSize: 16 }}>{card.subtitle}</div>
-                  <div style={{ color: '#6b3fa0', fontWeight: 400, fontSize: 14, marginTop: 10 }}>Clique ou passe o mouse para saber mais</div>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                      padding: '20px',
+                      color: '#fff',
+                      transition: 'all 0.5s ease-in-out',
+                    }}
+                  >
+                    <h3 style={{ margin: 0, fontSize: isMobile ? 20 : 24, fontWeight: 700 }}>
+                      {card.title}
+                    </h3>
+                  </div>
                 </div>
+
                 {/* Verso do card */}
                 <div
                   style={{
-                    background: '#6b3fa0',
-                    color: '#fff',
-                    borderRadius: 24,
-                    padding: 18,
-                    boxShadow: '0 2px 16px rgba(0,0,0,0.10)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)',
+                    background: '#6b3fa0',
+                    borderRadius: '20px',
+                    padding: '20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: '#fff',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+                    transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <h3 style={{ fontSize: 24, marginBottom: 16, fontWeight: 700 }}>{card.title}</h3>
-                  <p style={{ fontSize: 16, marginBottom: 16 }}>{card.description}</p>
-                  <p style={{ fontSize: 16, marginBottom: 24 }}>{card.name}</p>
-                  <p style={{ fontSize: 14, marginBottom: 24 }}>{card.contato}</p>
+                  <h3 style={{ margin: '0 0 15px 0', fontSize: isMobile ? 20 : 24, fontWeight: 700 }}>
+                    {card.title}
+                  </h3>
+                  <p style={{ 
+                    margin: '0 0 20px 0', 
+                    fontSize: isMobile ? 14 : 16,
+                    textAlign: 'center',
+                    lineHeight: 1.5
+                  }}>
+                    {card.description}
+                  </p>
+                  {card.name && (
+                    <p style={{ 
+                      margin: '0 0 10px 0', 
+                      fontSize: isMobile ? 14 : 16,
+                      fontWeight: 600
+                    }}>
+                      {card.name}
+                    </p>
+                  )}
+                  {card.contato && (
+                    <p style={{ 
+                      margin: '0 0 20px 0', 
+                      fontSize: isMobile ? 14 : 16
+                    }}>
+                      {card.contato}
+                    </p>
+                  )}
                   <a
                     href={card.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       background: '#fff',
                       color: '#6b3fa0',
-                      padding: '12px 24px',
-                      borderRadius: 12,
+                      padding: '10px 20px',
+                      borderRadius: '25px',
                       textDecoration: 'none',
-                      fontWeight: 600,
-                      fontSize: 16,
+                      fontWeight: 700,
+                      fontSize: isMobile ? 14 : 16,
                       transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.transform = 'scale(1.05)';
-                      e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.transform = 'scale(1)';
-                      e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                      '&:hover': {
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                      }
                     }}
                   >
                     Saiba mais

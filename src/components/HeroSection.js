@@ -24,7 +24,7 @@ const HeroSection = () => {
 
       <section
         style={{
-          background: `url(${require('../assets/container_fundo.png')}) center/cover no-repeat`,
+          background: `url(${require('/Users/yagoribeirodeoliveira/Desktop/ Projeto Equilibrium /lp-frontend/src/assets/images/imagesContainer/imagesContaine/container_fundo.png')}) center/cover no-repeat`,
           color: '#fff',
           minHeight: '100vh',
           position: 'relative',
@@ -154,7 +154,7 @@ const HeroSection = () => {
             />
             {/* Primeira criança (fundo) */}
             <img
-              src={require('/Users/yagoribeirodeoliveira/Desktop/ Projeto Equilibrium /lp-frontend/src/assets/foto_crianca2.png')}
+              src={require('/Users/yagoribeirodeoliveira/Desktop/ Projeto Equilibrium /lp-frontend/src/assets/images/fotosCriancas/foto_crianca2.png')}
               alt="Criança 1"
               style={{
                 width: mobile ? '60vw' : 420,
@@ -179,7 +179,7 @@ const HeroSection = () => {
             />
             {/* Segunda criança (frente, sobreposta) */}
             <img
-              src={require('/Users/yagoribeirodeoliveira/Desktop/ Projeto Equilibrium /lp-frontend/src/assets/foto_crianca.png')}
+              src={require('../assets/images/fotosCriancas/foto_crianca.png')}
               alt="Criança 2"
               style={{
                 width: mobile ? '36vw' : 360,

@@ -11,17 +11,50 @@ const sections = [
 const Navbar = () => {
   const [mobile, setMobile] = useState(window.innerWidth <= 900);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setMobile(window.innerWidth <= 900);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleLinkClick = (id) => {
     setMenuOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const linkStyle = {
+    color: '#7d5a8c',
+    textDecoration: 'none',
+    fontWeight: 500,
+    fontSize: mobile ? 16 : 18,
+    cursor: 'pointer',
+    position: 'relative',
+    padding: '8px 0',
+    transition: 'all 0.3s ease',
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      width: '0%',
+      height: '2px',
+      bottom: 0,
+      left: '50%',
+      background: '#7d5a8c',
+      transition: 'all 0.3s ease',
+      transform: 'translateX(-50%)',
+    },
+    '&:hover:after': {
+      width: '100%',
+    }
   };
 
   return (
@@ -31,14 +64,16 @@ const Navbar = () => {
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: '#7d5a8c',
-        color: '#fff',
+        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : '#fff',
+        color: '#7d5a8c',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '10px 20px',
+        padding: mobile ? '5px 20px' : '10px 50px',
         zIndex: 1000,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+        boxShadow: scrolled ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
+        transition: 'all 0.3s ease',
+        height: mobile ? '100px' : '110px',
       }}
     >
       {/* Logo */}
@@ -46,17 +81,21 @@ const Navbar = () => {
         style={{ 
           flexShrink: 0, 
           cursor: 'pointer',
-          marginLeft: mobile ? 0 : 50, // margem para trazer a logo mais para direita
+          marginLeft: mobile ? 0 : 20,
+          display: 'flex',
+          alignItems: 'center',
+          height: '100%',
         }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <img
-          src={require('../assets/logo-branca.png')} // ajuste caminho
+          src={require('../assets/images/LogoEquilibrium/logo.png')}
           alt="Logo"
           style={{
-            height: mobile ? 60 : 80,
-            width: 'auto',
-            transition: 'height 0.3s',
+            height: '100%',
+            width: '150px',
+            objectFit: 'contain',
+            transition: 'all 0.3s ease',
           }}
         />
       </div>
@@ -78,13 +117,17 @@ const Navbar = () => {
             cursor: 'pointer',
             padding: 0,
             zIndex: 1100,
+            position: 'absolute',
+            right: 20,
+            top: '50%',
+            transform: 'translateY(-50%)',
           }}
         >
           <span
             style={{
               width: 28,
-              height: 3,
-              background: '#fff',
+              height: 2,
+              background: '#7d5a8c',
               borderRadius: 2,
               transition: 'all 0.3s',
               transform: menuOpen ? 'rotate(45deg)' : 'none',
@@ -95,8 +138,8 @@ const Navbar = () => {
           <span
             style={{
               width: 28,
-              height: 3,
-              background: '#fff',
+              height: 2,
+              background: '#7d5a8c',
               borderRadius: 2,
               margin: '6px 0',
               opacity: menuOpen ? 0 : 1,
@@ -106,8 +149,8 @@ const Navbar = () => {
           <span
             style={{
               width: 28,
-              height: 3,
-              background: '#fff',
+              height: 2,
+              background: '#7d5a8c',
               borderRadius: 2,
               transition: 'all 0.3s',
               transform: menuOpen ? 'rotate(-45deg)' : 'none',
@@ -127,41 +170,41 @@ const Navbar = () => {
           display: mobile ? (menuOpen ? 'flex' : 'none') : 'flex',
           flexDirection: mobile ? 'column' : 'row',
           position: mobile ? 'fixed' : 'static',
-          top: mobile ? 60 : 'auto',
+          top: mobile ? 100 : 'auto',
           right: mobile ? 0 : 'auto',
-          backgroundColor: '#7d5a8c',
-          width: mobile ? '60vw' : 'auto',
-          height: mobile ? 'calc(100vh - 60px)' : 'auto',
-          boxShadow: mobile ? '-2px 0 8px rgba(0,0,0,0.15)' : 'none',
+          backgroundColor: mobile ? '#fff' : 'transparent',
+          width: mobile ? '100%' : 'auto',
+          height: mobile ? 'calc(100vh - 100px)' : 'auto',
+          boxShadow: mobile ? '0 4px 8px rgba(0,0,0,0.1)' : 'none',
           paddingTop: mobile ? 20 : 0,
           zIndex: 1050,
           overflowY: 'auto',
           alignItems: 'center',
-          alignItems: mobile ? 'stretch' : 'center'
+          gap: mobile ? 30 : 40,
         }}
       >
         {sections.map(({ id, label }) => {
           if (id === 'contato') {
             return (
-              <li key={id} style={{ margin: mobile ? '0 0 20px 20px' : '0 20px' }}>
+              <li key={id} style={{ margin: 0 }}>
                 <a
                   href="https://api.whatsapp.com/send?phone=5561981707664"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
+                    ...linkStyle,
+                    background: '#25D366',
                     color: '#fff',
-                    backgroundColor: '#25D366',
-                    fontWeight: '700',
-                    fontSize: 18,
-                    cursor: 'pointer',
-                    transition: 'background-color 0.3s ease',
-                    padding: '8px 16px',
+                    padding: '10px 20px',
                     borderRadius: 25,
-                    display: 'inline-block',
-                    textDecoration: 'none',
+                    '&:after': {
+                      display: 'none',
+                    },
+                    '&:hover': {
+                      background: '#1ebe57',
+                      transform: 'translateY(-2px)',
+                    }
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1ebe57')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#25D366')}
                 >
                   {label}
                 </a>
@@ -170,24 +213,26 @@ const Navbar = () => {
           }
 
           return (
-            <li key={id} style={{ margin: mobile ? '0 0 20px 20px' : '0 20px' }}>
+            <li key={id} style={{ margin: 0 }}>
               <a
                 href={`#${id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleLinkClick(id);
                 }}
-                style={{
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  fontSize: 18,
-                  cursor: 'pointer',
-                  transition: 'color 0.3s ease',
-                  display: 'block',
+                style={linkStyle}
+                onMouseEnter={(e) => {
+                  e.target.style.color = '#9b6db7';
+                  e.target.style.after = {
+                    width: '100%',
+                  };
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#d1b3e0')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => {
+                  e.target.style.color = '#7d5a8c';
+                  e.target.style.after = {
+                    width: '0%',
+                  };
+                }}
               >
                 {label}
               </a>

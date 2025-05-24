@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import aguas1 from '../assets/escritorio_aguas.png';
-import aguas2 from '../assets/escritorio_aguas1.png';
-import aguas3 from '../assets/escritorio_aguas2.png';
-import tagua1 from '../assets/escritorio.webp';
-import tagua2 from '../assets/escritorio2.webp';
-import tagua3 from '../assets/escritorio3.webp';
+import aguas1 from '../assets/images/imagesEscAguas/fotoagua.jpeg';
+import aguas2 from '../assets/images/imagesEscAguas/fotoagua2.jpeg';
+import aguas3 from '../assets/images/imagesEscAguas/fotoagua3.jpeg';
+import tagua1 from '../assets/images/imagesEscTagua/fototagua1.jpeg';
+import tagua2 from '../assets/images/imagesEscTagua/fototagua2.jpeg';
+import tagua3 from '../assets/images/imagesEscTagua/fototagua3.jpeg';
 
 const grupos = {
   aguas: [aguas1, aguas2, aguas3],

@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 // Importe seus logos reais
-import logo1 from '../assets/bradesco.png';
-import logo2 from '../assets/cassi.png';
-import logo3 from '../assets/Serpro.png';
-import logo4 from '../assets/fascal.webp';
-import logo5 from '../assets/casembrapa.png';
-import logo6 from '../assets/Real_grandeza.png';
-import logo7 from '../assets/Affego.png'; 
-import logo8 from '../assets/unnamed.png';
-import logo9 from '../assets/bradesc.png';
-import logo10 from '../assets/crapesp.png';
+import logo1 from '../assets/images/imagesLogo/bradesco.png';
+import logo2 from '../assets/images/imagesLogo/cassi.png';
+import logo3 from '../assets/images/imagesLogo/Serpro.png';
+import logo4 from '../assets/images/imagesLogo/fascal.webp';
+import logo5 from '../assets/images/imagesLogo/casembrapa.png';
+import logo6 from '../assets/images/imagesLogo/Real_grandeza.png';
+import logo7 from '../assets/images/imagesLogo/Affego.png'; 
+import logo8 from '../assets/images/imagesLogo/unnamed.png';
+import logo9 from '../assets/images/imagesLogo/bradesc.png';
+import logo10 from '../assets/images/imagesLogo/crapesp.png';
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10];
 

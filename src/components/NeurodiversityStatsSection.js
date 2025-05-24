@@ -7,7 +7,7 @@ const stats = [
     description: (
       <>
         População mundial <br/>
-        é neurodiversa
+        é neurodiversa, abragendo novas condições como autismo, TDAH, dislexia, entre outras.
       </>
     ),
   },
@@ -15,9 +15,13 @@ const stats = [
     value: '1 entre 5',
     description: (
       <>
-       Tem algum tipo <br />
-        deferença de <br />
-        aprendizagem
+       Tem algum tipo
+        deferença de 
+        aprendizagem,
+        destacando a
+        necessidade de
+         ambiente educacionais inclusivos.
+        
       </>
     ),
   },
@@ -25,9 +29,9 @@ const stats = [
     value: '90%',
     description: (
       <>
-        Dos gestores que<br />
-        adotaram a <br />
-        neurodiversidade
+        Dos gestores que
+        adotaram a 
+        neurodiversidade relataram melhorias na cultura organizacional
       </>
     ),
   },
@@ -48,7 +52,7 @@ const NeurodiversityStatsSection = () => {
     <section
       ref={ref}
       style={{
-        background: `url(${require('../assets/container_fundo.png')}) center/cover no-repeat`,
+        background: `url(${require('/Users/yagoribeirodeoliveira/Desktop/ Projeto Equilibrium /lp-frontend/src/assets/images/imagesContainer/imagesContaine/container_fundo.png')}) center/cover no-repeat`,
         color: '#fff',
         position: 'relative',
         padding: mobile ? '60px 0 60px 0' : '100px 0 100px 0',
@@ -161,8 +165,43 @@ const NeurodiversityStatsSection = () => {
           ))}
         </div>
 
-        {/* Botão centralizado */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 20 }}>
+        {/* Botões alinhados */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: mobile ? 'column' : 'row',
+          justifyContent: 'center', 
+          alignItems: 'center',
+          gap: mobile ? 20 : 40,
+          marginTop: 40,
+          width: '100%',
+        }}>
+          <a
+            href='https://cfa.org.br/'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{
+              background: '#6b3fa0',
+              color: '#fff',
+              fontWeight: 700,
+              fontSize: mobile ? 16 : 18,
+              border: 'none',
+              borderRadius: 25,
+              padding: mobile ? '12px 24px' : '15px 30px',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-block',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+              }
+            }}
+          >
+            Saiba mais
+          </a>
+
           <a
             href='https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
             target='_blank'
@@ -171,15 +210,20 @@ const NeurodiversityStatsSection = () => {
               background: '#4fd1c5',
               color: '#fff',
               fontWeight: 900,
-              fontSize: 20,
+              fontSize: mobile ? 16 : 18,
               border: 'none',
               borderRadius: 25,
-              padding: '18px 48px',
+              padding: mobile ? '12px 24px' : '15px 30px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
               cursor: 'pointer',
               textDecoration: 'none',
               display: 'inline-block',
               textAlign: 'center',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+              }
             }}
           >
             Agende sua consulta
