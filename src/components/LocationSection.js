@@ -18,7 +18,7 @@ const LocationSection = () => {
       map:" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4848.109844835373!2d-48.0106605!3d-15.8301146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3218253da761%3A0x6e004aed7d3510cc!2sEspa%C3%A7o%20Equilibrium%20-%20Cl%C3%ADnica%20de%20Psicologia%2C%20Fonoaudiologia%20e%20Psicopedagogia!5e1!3m2!1spt-PT!2sbr!4v1748030920708!5m2!1spt-PT!2sbr",
       phone: "(061) 3208-5001",
       whatsapp: "(061) 3208-5001",
-      whatsappUrl: "https://api.whatsapp.com/send?phone=556132085001&text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20a%20unidade%20de%20Águas%20Claras!",
+      whatsappUrl: "https://wa.me/556132085001?text=Eu%20gostaria%20de%20marcar%20uma%20consulta%20com%20vocês",
       email: "espacoequilibrium.saude@gmail.com"
     },
     taguatinga: {

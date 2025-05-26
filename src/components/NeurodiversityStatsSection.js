@@ -176,18 +176,17 @@ const NeurodiversityStatsSection = () => {
           width: '100%',
         }}>
           <a
-            href='https://cfa.org.br/'
+            
             target='_blank'
             rel='noopener noreferrer'
             style={{
-              background: '#6b3fa0',
+              
               color: '#fff',
               fontWeight: 700,
               fontSize: mobile ? 16 : 18,
               border: 'none',
               borderRadius: 25,
               padding: mobile ? '12px 24px' : '15px 30px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
               cursor: 'pointer',
               textDecoration: 'none',
               display: 'inline-block',
@@ -199,7 +198,7 @@ const NeurodiversityStatsSection = () => {
               }
             }}
           >
-            Saiba mais
+          fonte:cfa.org.br
           </a>
 
           <a
