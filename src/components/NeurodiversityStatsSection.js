@@ -168,7 +168,7 @@ const NeurodiversityStatsSection = () => {
         {/* Botões alinhados */}
         <div style={{ 
           display: 'flex', 
-          flexDirection: mobile ? 'column' : 'row',
+          flexDirection: mobile ? 'column-reverse' : 'row',
           justifyContent: 'center', 
           alignItems: 'center',
           gap: mobile ? 20 : 40,
@@ -181,7 +181,7 @@ const NeurodiversityStatsSection = () => {
             rel='noopener noreferrer'
             style={{
               
-              color: '#fff',
+              color: mobile ? '#8459b4':'#fff',
               fontWeight: 700,
               fontSize: mobile ? 16 : 18,
               border: 'none',

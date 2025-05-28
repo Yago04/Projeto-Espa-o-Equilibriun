@@ -17,8 +17,6 @@ const LocationSection = () => {
     aguas: {
       map:" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4848.109844835373!2d-48.0106605!3d-15.8301146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3218253da761%3A0x6e004aed7d3510cc!2sEspa%C3%A7o%20Equilibrium%20-%20Cl%C3%ADnica%20de%20Psicologia%2C%20Fonoaudiologia%20e%20Psicopedagogia!5e1!3m2!1spt-PT!2sbr!4v1748030920708!5m2!1spt-PT!2sbr",
       phone: "(061) 3208-5001",
-      whatsapp: "(061) 3208-5001",
-      whatsappUrl: "https://wa.me/556132085001?text=Eu%20gostaria%20de%20marcar%20uma%20consulta%20com%20vocês",
       email: "espacoequilibrium.saude@gmail.com"
     },
     taguatinga: {
@@ -30,26 +28,33 @@ const LocationSection = () => {
     }
   };
 
-  const getContactInfo = () => [
-    {
-      title: "Telefone",
-      value: locations[selectedUnit].phone,
-      icon: "📞",
-      link: `tel:${locations[selectedUnit].phone.replace(/\D/g, '')}`
-    },
-    {
-      title: "Whatsapp",
-      value: locations[selectedUnit].whatsapp,
-      icon: "💬",
-      link: locations[selectedUnit].whatsappUrl
-    },
-    {
-      title: "Email",
-      value: locations[selectedUnit].email,
-      icon: "✉️",
-      link: `mailto:${locations[selectedUnit].email}`
+  const getContactInfo = () => {
+    const contacts = [
+      {
+        title: "Telefone",
+        value: locations[selectedUnit].phone,
+        icon: "📞",
+        link: `tel:${locations[selectedUnit].phone.replace(/\D/g, '')}`
+      },
+      {
+        title: "Email",
+        value: locations[selectedUnit].email,
+        icon: "✉️",
+        link: `mailto:${locations[selectedUnit].email}`
+      }
+    ];
+
+    if (selectedUnit === 'taguatinga') {
+      contacts.splice(1, 0, {
+        title: "Whatsapp",
+        value: locations[selectedUnit].whatsapp,
+        icon: "💬",
+        link: locations[selectedUnit].whatsappUrl
+      });
     }
-  ];
+
+    return contacts;
+  };
 
   const buttonStyle = (isSelected) => ({
     background: isSelected ? '#7d5a8c' : '#d1b3e0',
