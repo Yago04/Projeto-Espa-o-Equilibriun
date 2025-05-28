@@ -14,7 +14,7 @@ const infoBlocks = [
   {
     id: 'coracaoid',
     img: coracaoImg,
-    text: 'Em vez de considerar essas diferenças como problemas a serem corrigidos, a neurodiversidade propõe que elas sejam aceitas e valorizadas.',
+    text: 'Em vez de considerar essas diferenças como problemas a serem corrigidos, a neurodiversidade propõe que elas sejam aceitas e valorizadas. São formas distintas de perceber e interagir com o mundo, e merecem ser reconhecidas como parte da rica diversidade humana.',
     imgPosition: 'right',
   },
   {
