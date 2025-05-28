@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Projeto-Espa-o-Equilibriun/static/css/main.f855e6bc.css",
-    "main.js": "/Projeto-Espa-o-Equilibriun/static/js/main.e2946c14.js",
+    "main.js": "/Projeto-Espa-o-Equilibriun/static/js/main.34279890.js",
     "static/js/453.75f95c41.chunk.js": "/Projeto-Espa-o-Equilibriun/static/js/453.75f95c41.chunk.js",
     "static/media/nutricao.jpg": "/Projeto-Espa-o-Equilibriun/static/media/nutricao.f4b597617e1c7f378bf4.jpg",
     "static/media/psicologa.jpg": "/Projeto-Espa-o-Equilibriun/static/media/psicologa.bc86e4f6bd41b9edf88e.jpg",
@@ -26,11 +26,11 @@
     "static/media/unnamed.png": "/Projeto-Espa-o-Equilibriun/static/media/unnamed.5fed2d75974a6e850fc7.png",
     "static/media/Affego.png": "/Projeto-Espa-o-Equilibriun/static/media/Affego.be6701df9df58fdbf7e2.png",
     "static/media/crapesp.png": "/Projeto-Espa-o-Equilibriun/static/media/crapesp.52eb06bb1453d7b5e46f.png",
+    "static/media/psiquiatria.jpg": "/Projeto-Espa-o-Equilibriun/static/media/psiquiatria.9d1b2b4c55a686ca95b3.jpg",
     "static/media/Simbolo.png": "/Projeto-Espa-o-Equilibriun/static/media/Simbolo.de91bc2de103022d3cfe.png",
     "static/media/bradesc.png": "/Projeto-Espa-o-Equilibriun/static/media/bradesc.1c23807c5f5fc2f0fe94.png",
     "static/media/fonodiologia.jpg": "/Projeto-Espa-o-Equilibriun/static/media/fonodiologia.914335a9b63cc6bec3e6.jpg",
     "static/media/pediatra.webp": "/Projeto-Espa-o-Equilibriun/static/media/pediatra.3ae48ced99e4e3b4908f.webp",
-    "static/media/psiquiatria.jpg": "/Projeto-Espa-o-Equilibriun/static/media/psiquiatria.4acad9fcec2cc5125fa8.jpg",
     "static/media/casembrapa.png": "/Projeto-Espa-o-Equilibriun/static/media/casembrapa.2c996452b695d7381f5f.png",
     "static/media/terapiaocu.avif": "/Projeto-Espa-o-Equilibriun/static/media/terapiaocu.c2a5f9d70335d9113e8a.avif",
     "static/media/perfil3.png": "/Projeto-Espa-o-Equilibriun/static/media/perfil3.3ee2bc3120f9284b8655.png",
@@ -40,11 +40,11 @@
     "static/media/fascal.webp": "/Projeto-Espa-o-Equilibriun/static/media/fascal.d4d0b5c4b154a14c5e05.webp",
     "index.html": "/Projeto-Espa-o-Equilibriun/index.html",
     "main.f855e6bc.css.map": "/Projeto-Espa-o-Equilibriun/static/css/main.f855e6bc.css.map",
-    "main.e2946c14.js.map": "/Projeto-Espa-o-Equilibriun/static/js/main.e2946c14.js.map",
+    "main.34279890.js.map": "/Projeto-Espa-o-Equilibriun/static/js/main.34279890.js.map",
     "453.75f95c41.chunk.js.map": "/Projeto-Espa-o-Equilibriun/static/js/453.75f95c41.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.e2946c14.js"
+    "static/js/main.34279890.js"
   ]
 }
