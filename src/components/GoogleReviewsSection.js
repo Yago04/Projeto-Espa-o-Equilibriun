@@ -6,7 +6,7 @@ import fotoperfil4 from '../assets/images/foto_perfil/perfil4.png';
 
 const reviews = [
   {
-    name: 'Maria Souza',
+    name: 'Aléx Junior ',
     avatar: fotoperfil,
     rating: 5,
     comment: 'Atendimento excelente! Profissionais muito atenciosos e ambiente acolhedor. Recomendo demais.'
@@ -24,7 +24,7 @@ const reviews = [
     comment: 'Ótima estrutura e profissionais qualificados. Recomendo para todos que buscam um atendimento humanizado.'
   },
   {
-    name: 'Victória Gonçalves',
+    name: 'Loyanne káryta ',
     avatar: fotoperfil4,
     rating: 4,
     comment: 'Espaço grande e aconchegante, pessoal muito atencioso e ótimos profissionais'
