@@ -5,6 +5,7 @@ import fonodiologa1 from '../assets/images/imagesProf/fonodiologia.jpg';
 import nutricaoImg from '../assets/images/imagesProf/nutricao.jpg';
 import avaliacaoImg from '../assets/images/imagesProf/avaliacao.jpg';
 import mbaImg from '../assets/images/imagesProf/mba.jpg';
+import terapia from '../assets/images/imagesProf/terapiaocu.jpg';
 import { useScrollReveal } from './useScrollReveal';
 
 
@@ -63,21 +64,14 @@ const allCards = [
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
   {
-    img: psicologaImg,
+    img: terapia,
     title: 'Terapia Ocupacional',
     name: '',
     description: 'Atendimento especializado em terapia ocupacional para todas as idades.',
     contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
-  {
-    img: psicopedagogiaImg,
-    title: 'Psicomotricidade',
-    name: '',
-    description: 'Desenvolvimento motor e cognitivo através de atividades lúdicas.',
-    contato: '',
-    url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
-  },
+
   
 ];
 
