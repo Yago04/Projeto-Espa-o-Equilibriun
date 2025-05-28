@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/Projeto-Espa-o-Equilibriun/static/css/main.f855e6bc.css",
-    "main.js": "/Projeto-Espa-o-Equilibriun/static/js/main.81a6cab6.js",
+    "main.js": "/Projeto-Espa-o-Equilibriun/static/js/main.94b25945.js",
     "static/js/453.75f95c41.chunk.js": "/Projeto-Espa-o-Equilibriun/static/js/453.75f95c41.chunk.js",
     "static/media/nutricao.jpg": "/Projeto-Espa-o-Equilibriun/static/media/nutricao.f4b597617e1c7f378bf4.jpg",
     "static/media/psicologa.jpg": "/Projeto-Espa-o-Equilibriun/static/media/psicologa.bc86e4f6bd41b9edf88e.jpg",
     "static/media/psicopedagogia.jpg": "/Projeto-Espa-o-Equilibriun/static/media/psicopedagogia.502545df6352a3984575.jpg",
     "static/media/fonodiologia.jpg": "/Projeto-Espa-o-Equilibriun/static/media/fonodiologia.f134ce59809eb9960b3b.jpg",
+    "static/media/terapiaocu.jpg": "/Projeto-Espa-o-Equilibriun/static/media/terapiaocu.c0e75aef1b8066d6871a.jpg",
     "static/media/foto_crianca.png": "/Projeto-Espa-o-Equilibriun/static/media/foto_crianca.0197dd809e3cedd8d496.png",
     "static/media/foto_crianca2.png": "/Projeto-Espa-o-Equilibriun/static/media/foto_crianca2.c09214c834d1c0586bc0.png",
     "static/media/container_fundo.png": "/Projeto-Espa-o-Equilibriun/static/media/container_fundo.ef56cfa99e51dfac1905.png",
@@ -37,11 +38,11 @@
     "static/media/fascal.webp": "/Projeto-Espa-o-Equilibriun/static/media/fascal.d4d0b5c4b154a14c5e05.webp",
     "index.html": "/Projeto-Espa-o-Equilibriun/index.html",
     "main.f855e6bc.css.map": "/Projeto-Espa-o-Equilibriun/static/css/main.f855e6bc.css.map",
-    "main.81a6cab6.js.map": "/Projeto-Espa-o-Equilibriun/static/js/main.81a6cab6.js.map",
+    "main.94b25945.js.map": "/Projeto-Espa-o-Equilibriun/static/js/main.94b25945.js.map",
     "453.75f95c41.chunk.js.map": "/Projeto-Espa-o-Equilibriun/static/js/453.75f95c41.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.81a6cab6.js"
+    "static/js/main.94b25945.js"
   ]
 }
