@@ -5,7 +5,9 @@ import fonodiologa1 from '../assets/images/imagesProf/fonodiologia.jpg';
 import nutricaoImg from '../assets/images/imagesProf/nutricao.jpg';
 import avaliacaoImg from '../assets/images/imagesProf/avaliacao.jpg';
 import mbaImg from '../assets/images/imagesProf/mba.jpg';
-import terapia from '../assets/images/imagesProf/terapiaocu.jpg';
+import terapia from '../assets/images/imagesProf/terapiaocu.avif';
+import Pediatria from '../assets/images/imagesProf/pediatra.webp';
+import Psiquiatria from '../assets/images/imagesProf/psiquiatria.jpg';
 import { useScrollReveal } from './useScrollReveal';
 
 
@@ -71,6 +73,23 @@ const allCards = [
     contato: '',
     url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
   },
+  {
+  img: Pediatria,
+  title: 'Pediatria',
+  name: '',
+  description: 'Atendimento especializado em pediatria para todas as idades.',
+  contato: '',
+  url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+},
+{
+  img: Psiquiatria,
+  title: 'Psiquiatria',
+  name: '',
+  description: 'Atendimento especializado em Psiquiatria para todas as idades.',
+  contato: '',
+  url: 'https://api.whatsapp.com/send?phone=5561981707664&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!.'
+},
+
 
   
 ];
