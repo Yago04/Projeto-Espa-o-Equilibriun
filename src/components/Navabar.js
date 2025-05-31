@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Navbar.css';
+
 
 const sections = [
   { id: 'neurodiversidade', label: 'O que é neurodiversidade' },
@@ -9,237 +12,151 @@ const sections = [
 ];
 
 const Navbar = () => {
-  const [mobile, setMobile] = useState(window.innerWidth <= 900);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setMobile(window.innerWidth <= 900);
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    
-    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLinkClick = (id) => {
-    setMenuOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const linkStyle = {
-    color: '#7d5a8c',
-    textDecoration: 'none',
-    fontWeight: 500,
-    fontSize: mobile ? 16 : 18,
-    cursor: 'pointer',
-    position: 'relative',
-    padding: '8px 0',
-    transition: 'all 0.3s ease',
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      width: '0%',
-      height: '2px',
-      bottom: 0,
-      left: '50%',
-      background: '#7d5a8c',
-      transition: 'all 0.3s ease',
-      transform: 'translateX(-50%)',
-    },
-    '&:hover:after': {
-      width: '100%',
-    }
-  };
-
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : '#fff',
-        color: '#7d5a8c',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: mobile ? '5px 20px' : '10px 50px',
-        zIndex: 1000,
-        boxShadow: scrolled ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-        transition: 'all 0.3s ease',
-        height: mobile ? '100px' : '110px',
-      }}
-    >
-      {/* Logo */}
-      <div
-        style={{ 
-          flexShrink: 0, 
-          cursor: 'pointer',
-          marginLeft: mobile ? 0 : 20,
-          display: 'flex',
-          alignItems: 'center',
-          height: '100%',
-        }}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >
-        <img
-          src={require('../assets/images/LogoEquilibrium/logo.png')}
-          alt="Logo"
-          style={{
-            height: '100%',
-            width: '150px',
-            objectFit: 'contain',
-            transition: 'all 0.3s ease',
-          }}
-        />
-      </div>
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'bg-white shadow-sm' : 'bg-white'}`} 
+         style={{ 
+           transition: 'all 0.3s ease',
+           height: '100px',
+           backgroundColor: '#fff',
+           boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+         }}>
+      <div className="container">
+        {/* Logo */}
+        <a className="navbar-brand" href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img
+            src={require('../assets/images/LogoEquilibrium/logo.png')}
+            alt="Logo"
+            style={{
+              height: '80px',
+              width: 'auto',
+              objectFit: 'contain',
+              transition: 'all 0.3s ease',
+            }}
+          />
+        </a>
 
-      {/* Botão hambúrguer só no mobile */}
-      {mobile && (
+        {/* Botão hambúrguer */}
         <button
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: 30,
-            height: 30,
-            background: 'transparent',
             border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            zIndex: 1100,
-            position: 'absolute',
-            right: 20,
-            top: '50%',
-            transform: 'translateY(-50%)',
+            padding: '0.5rem',
+            color: '#7d5a8c'
           }}
         >
-          <span
-            style={{
-              width: 28,
-              height: 2,
-              background: '#7d5a8c',
-              borderRadius: 2,
-              transition: 'all 0.3s',
-              transform: menuOpen ? 'rotate(45deg)' : 'none',
-              position: 'relative',
-              top: menuOpen ? 12 : 0,
-            }}
-          />
-          <span
-            style={{
-              width: 28,
-              height: 2,
-              background: '#7d5a8c',
-              borderRadius: 2,
-              margin: '6px 0',
-              opacity: menuOpen ? 0 : 1,
-              transition: 'all 0.3s',
-            }}
-          />
-          <span
-            style={{
-              width: 28,
-              height: 2,
-              background: '#7d5a8c',
-              borderRadius: 2,
-              transition: 'all 0.3s',
-              transform: menuOpen ? 'rotate(-45deg)' : 'none',
-              position: 'relative',
-              top: menuOpen ? -6 : 0,
-            }}
-          />
+          <span className="navbar-toggler-icon"></span>
         </button>
-      )}
 
-      {/* Menu */}
-      <ul
-        style={{
-          listStyle: 'none',
-          margin: 0,
-          padding: 0,
-          display: mobile ? (menuOpen ? 'flex' : 'none') : 'flex',
-          flexDirection: mobile ? 'column' : 'row',
-          position: mobile ? 'fixed' : 'static',
-          top: mobile ? 100 : 'auto',
-          right: mobile ? 0 : 'auto',
-          backgroundColor: mobile ? '#fff' : 'transparent',
-          width: mobile ? '100%' : 'auto',
-          height: mobile ? 'calc(100vh - 100px)' : 'auto',
-          boxShadow: mobile ? '0 4px 8px rgba(0,0,0,0.1)' : 'none',
-          paddingTop: mobile ? 20 : 0,
-          zIndex: 1050,
-          overflowY: 'auto',
-          alignItems: 'center',
-          gap: mobile ? 30 : 40,
-        }}
-      >
-        {sections.map(({ id, label }) => {
-          if (id === 'contato') {
-            return (
-              <li key={id} style={{ margin: 0 }}>
-                <a
-                  href="https://api.whatsapp.com/send?phone=5561981707664"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    ...linkStyle,
-                    background: '#25D366',
-                    color: '#fff',
-                    padding: '10px 20px',
-                    borderRadius: 25,
-                    '&:after': {
-                      display: 'none',
-                    },
-                    '&:hover': {
-                      background: '#1ebe57',
-                      transform: 'translateY(-2px)',
-                    }
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          }
+        {/* Menu */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center">
+            {sections.map(({ id, label }) => {
+              if (id === 'contato') {
+                return (
+                  <li className="nav-item" key={id}>
+                    <a
+                      className="nav-link"
+                      href="https://api.whatsapp.com/send?phone=5561981707664"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        background: '#25D366',
+                        color: '#fff',
+                        padding: '10px 20px',
+                        borderRadius: '25px',
+                        marginLeft: '1rem',
+                        transition: 'all 0.3s ease',
+                        fontWeight: 500,
+                        '@media (max-width: 991px)': {
+                          margin: '10px 0',
+                          textAlign: 'center',
+                          width: '100%'
+                        }
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = '#1ebe57';
+                        e.target.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = '#25D366';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                );
+              }
 
-          return (
-            <li key={id} style={{ margin: 0 }}>
-              <a
-                href={`#${id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(id);
-                }}
-                style={linkStyle}
-                onMouseEnter={(e) => {
-                  e.target.style.color = '#9b6db7';
-                  e.target.style.after = {
-                    width: '100%',
-                  };
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = '#7d5a8c';
-                  e.target.style.after = {
-                    width: '0%',
-                  };
-                }}
-              >
-                {label}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+              return (
+                <li className="nav-item" key={id}>
+                  <a
+                    className="nav-link"
+                    href={`#${id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick(id);
+                    }}
+                    style={{
+                      color: '#7d5a8c',
+                      fontWeight: 500,
+                      fontSize: '1.1rem',
+                      padding: '0.5rem 1rem',
+                      position: 'relative',
+                      transition: 'all 0.3s ease',
+                      '@media (max-width: 991px)': {
+                        background: '#f8f5fa',
+                        margin: '5px 0',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                        padding: '12px 20px',
+                        width: '100%',
+                        display: 'block',
+                        border: '1px solid #e6d9f0'
+                      }
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#9b6db7';
+                      if (window.innerWidth <= 991) {
+                        e.target.style.background = '#f0e6f5';
+                        e.target.style.borderColor = '#d4b8e6';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#7d5a8c';
+                      if (window.innerWidth <= 991) {
+                        e.target.style.background = '#f8f5fa';
+                        e.target.style.borderColor = '#e6d9f0';
+                      }
+                    }}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

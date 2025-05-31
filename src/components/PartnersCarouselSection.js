@@ -10,8 +10,13 @@ import logo7 from '../assets/images/imagesLogo/Affego.png';
 import logo8 from '../assets/images/imagesLogo/unnamed.png';
 import logo9 from '../assets/images/imagesLogo/bradesc.png';
 import logo10 from '../assets/images/imagesLogo/crapesp.png';
+import logo11 from '../assets/images/imagesLogo/STJ_logo.png';
+import logo12 from '../assets/images/imagesLogo/sulamerica.png';
+import logo13 from '../assets/images/imagesLogo/saudecaixa.png';
+import logo14 from '../assets/images/imagesLogo/saudebrb.png';
+import logo15 from '../assets/images/imagesLogo/inas.png';
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10];
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15];
 
 const PartnersCarouselSection = () => {
   const isMobile = window.innerWidth < 900;
@@ -103,16 +108,16 @@ const PartnersCarouselSection = () => {
             background: '#7d5a8c',
             border: 'none',
             color: '#fff',
-            fontSize: isMobile ? 32 : 40,
-            padding: isMobile ? '12px 16px' : '16px 20px',
+            fontSize: isMobile ? 24 : 40,
+            padding: isMobile ? '8px 12px' : '16px 20px',
             borderRadius: '50%',
             cursor: 'pointer',
             zIndex: 10,
             opacity: 0.85,
             boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
             transition: 'opacity 0.3s ease',
-            width: isMobile ? 50 : 60,
-            height: isMobile ? 50 : 60,
+            width: isMobile ? 40 : 60,
+            height: isMobile ? 40 : 60,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -134,16 +139,16 @@ const PartnersCarouselSection = () => {
             background: '#7d5a8c',
             border: 'none',
             color: '#fff',
-            fontSize: isMobile ? 32 : 40,
-            padding: isMobile ? '12px 16px' : '16px 20px',
+            fontSize: isMobile ? 24 : 40,
+            padding: isMobile ? '8px 12px' : '16px 20px',
             borderRadius: '50%',
             cursor: 'pointer',
             zIndex: 10,
             opacity: 0.85,
             boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
             transition: 'opacity 0.3s ease',
-            width: isMobile ? 50 : 60,
-            height: isMobile ? 50 : 60,
+            width: isMobile ? 40 : 60,
+            height: isMobile ? 40 : 60,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -163,7 +168,7 @@ const PartnersCarouselSection = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: isMobile ? 10 : 40,
+            gap: isMobile ? 10 : 50,
             marginBottom: 40,
             cursor: isDragging ? 'grabbing' : 'grab',
             overflowX: 'auto',
@@ -171,7 +176,7 @@ const PartnersCarouselSection = () => {
             WebkitOverflowScrolling: 'touch',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            padding: isMobile ? '20px 4vw' : '20px 0',
+            padding: isMobile ? '20px 2vw' : '20px 0',
           }}
         >
           {loopedLogos.map((logo, idx) => (

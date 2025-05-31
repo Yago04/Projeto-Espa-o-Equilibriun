@@ -1,0 +1,51 @@
+/* Estilos gerais dos links */
+.navbar-nav .nav-link {
+  color: #7d5a8c;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Estilos dos links no menu colapsado (mobile) */
+@media (max-width: 991px) {
+    /* Fundo na div que guarda os links no mobile (quando aberto) */
+    .navbar-collapse.show {
+      background-color: #f8f5fa; /* Fundo claro, você pode mudar a cor */
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Centralizar o texto dos links */
+    .navbar-collapse.show .navbar-nav {
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* Ajustar os itens da lista para ficarem com largura 100% e centralizados */
+    .navbar-collapse.show .nav-item {
+      width: 100%;
+    }
+  
+    /* Estilo dos links, bloco com fundo, borda arredondada e margem */
+    .navbar-collapse.show .nav-link {
+      background: #e9e1f7; /* Cor de fundo para os links */
+      margin: 8px 0;
+      border-radius: 8px;
+      padding: 12px 20px;
+      display: block;
+      color: #7d5a8c;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    /* Hover dos links no mobile */
+    .navbar-collapse.show .nav-link:hover {
+      background-color: #d4b8e6;
+      color: #4a2d6e;
+    }
+  }
+  
